@@ -387,7 +387,7 @@
     right: 2rem;
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 968px) {
     .author-content-item .card-content .banner-button-group .banner-button:hover {
       background: none !important;
     }
