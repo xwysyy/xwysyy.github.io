@@ -2410,3 +2410,11 @@ center#name-container {
   background: rgb(12, 118, 224);
 }
 
+/* 公告顶部欢迎信息 */
+#welcome-info {
+  border-radius: 14px;
+  --icat-ip-color: #49B1F5;
+  --icat-gl-size: 16px!important;
+}
+
+
