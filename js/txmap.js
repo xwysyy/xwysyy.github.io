@@ -85,7 +85,7 @@ function showWelcome() {
                     posdesc = "状元阁就是东北烧烤之王";
                     break;
                 case "黑龙江省":
-                    posdesc = "很喜欢哈尔滨大剧院";
+                    posdesc = "著名C2哈工大";
                     break;
                 case "上海市":
                     posdesc = "众所周知，中国只有两个城市";
