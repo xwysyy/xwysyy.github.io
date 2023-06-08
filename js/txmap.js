@@ -188,7 +188,7 @@ function showWelcome() {
                     posdesc = "躺在茫茫草原上，仰望蓝天";
                     break;
                 case "陕西省":
-                    posdesc = "来份臊子面加馍";
+                    posdesc = "“著名”985西北农林科技大学";
                     break;
                 case "甘肃省":
                     posdesc = "羌笛何须怨杨柳，春风不度玉门关";
