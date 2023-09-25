@@ -1,0 +1,795 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>MySQL | 善良的xwysyy</title><meta name="author" content="善良的xwysyy"><meta name="copyright" content="善良的xwysyy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MySQL MySQL 是一个数据库管理系统，数据库系统控制着数据的存储于操作。SQL 是结构化查询语言（Structed Query Language），是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理数据库系统。MySQL 是开源数据库用来存储数据，SQL 是查询语言可以对MySQL进行操作 1. 安装 1. Windows 安装 下载地址： https:&#x2F;&#x2F;dev.mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL">
+<meta property="og:url" content="https://www.xwysyy.cn/syntax/MySQL/index.html">
+<meta property="og:site_name" content="善良的xwysyy">
+<meta property="og:description" content="MySQL MySQL 是一个数据库管理系统，数据库系统控制着数据的存储于操作。SQL 是结构化查询语言（Structed Query Language），是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理数据库系统。MySQL 是开源数据库用来存储数据，SQL 是查询语言可以对MySQL进行操作 1. 安装 1. Windows 安装 下载地址： https:&#x2F;&#x2F;dev.mysql">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.xwysyy.cn/image/img-background/33.jpg">
+<meta property="article:published_time" content="2023-05-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-02T07:29:54.214Z">
+<meta property="article:author" content="善良的xwysyy">
+<meta property="article:tag" content="syntax">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.xwysyy.cn/image/img-background/33.jpg"><link rel="shortcut icon" href="/img/%E5%A4%B4%E5%83%8F.png"><link rel="canonical" href="https://www.xwysyy.cn/syntax/MySQL/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":20,"languages":{"author":"作者: 善良的xwysyy","link":"链接: ","source":"来源: 善良的xwysyy","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MySQL',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-02 15:29:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="/js/echarts.min.js"></script><link rel="stylesheet" type="text/css" href="/css/asidefloat.css"><link rel="stylesheet" type="text/css" href="/css/mystyle.css"><link rel="stylesheet" type="text/css" href="/css/console.css"><link rel="stylesheet" type="text/css" href="/css/double_row.css"><link rel="stylesheet" href="/css/essay_page.css"><link rel="stylesheet" href="/css/todolist.css"><link rel="stylesheet" href="/css/guanyv.css"><link rel="stylesheet" href="/css/weibo.css"><style id="settingStyle"></style><style id="yjjs"></style><style id="themeColor"></style><link rel="stylesheet" type="text/css" href="css/_custom/heoMainColor.css"><link rel="stylesheet" type="text/css" href="css/_custom/categoryBar.css"><script async src="/js/categoryBar.js"></script><link rel="stylesheet" type="text/css" href="css/404.css"><script type="text/javascript" src="js/jquery.min.js"></script><link rel="stylesheet" href="/css/records.css"><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3FeErm4Qj3nJOxIa",ck:"3FeErm4Qj3nJOxIa"})</script><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="/css/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/log/"><i class="fa-fw fas fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://uptime-kuma.xwysyy.cn/status/monitor"><i class="fa-fw fas fa-shield-alt"></i><span> 监控</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-alt"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/charts/"><i class="fa-fw fas fa-chart-area"></i><span> 统计</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></li><li><a class="site-page child" href="/ToDoList/"><i class="fa-fw fas fa-bell"></i><span> 待办</span></a></li><li><a class="site-page child" href="/records/"><i class="fa-fw fas fa-comments"></i><span> 文字瞬间</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></li><li><a class="site-page child" href="/friends/"><i class="fa-fw fas fa-user-friends"></i><span> 鱼塘</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-archive"></i><span> 项目</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://xwysyy.github.io/Fireworks"><i class="fa-fw fa fa-fire"></i><span> 烟花</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://xwysyy.github.io/reference"><i class="fa-fw fa fa-code"></i><span> 参考</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://xwysyy.github.io/Music"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about-chat/"><i class="fa-fw fas fa-comment"></i><span> 交互版</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-envelope"></i><span> 静态版</span></a></li><li><a class="site-page child" href="/essay/"><i class="fa-fw fas fa-edit"></i><span> 杂谈</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><div id="console"><div class="close-btn" onclick="heo.hideConsole()" href="javascript:void(0);"><i class="fas fa-circle-xmark"></i></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="heo.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title">最近评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="heo.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><span class="author-content-item-title">寻找感兴趣的领域</span></div><div class="card-tag-cloud"><a href="/tags/CPP/" style="font-size: 1em; color: #d3d3d3">CPP</a> <a href="/tags/CSS/" style="font-size: 1em; color: #d3d3d3">CSS</a> <a href="/tags/ChatGPT/" style="font-size: 1em; color: #d3d3d3">ChatGPT</a> <a href="/tags/Git/" style="font-size: 1em; color: #d3d3d3">Git</a> <a href="/tags/HTML/" style="font-size: 1em; color: #d3d3d3">HTML</a> <a href="/tags/JavaScript/" style="font-size: 1em; color: #d3d3d3">JavaScript</a> <a href="/tags/LaTeX/" style="font-size: 1em; color: #d3d3d3">LaTeX</a> <a href="/tags/MySQL/" style="font-size: 1em; color: #d3d3d3">MySQL</a> <a href="/tags/Python/" style="font-size: 1em; color: #d3d3d3">Python</a> <a href="/tags/Typora/" style="font-size: 1em; color: #d3d3d3">Typora</a> <a href="/tags/ai/" style="font-size: 1em; color: #d3d3d3">ai</a> <a href="/tags/algorithm/" style="font-size: 1em; color: #d3d3d3">algorithm</a> <a href="/tags/course/" style="font-size: 1em; color: #d3d3d3">course</a> <a href="/tags/project/" style="font-size: 1em; color: #d3d3d3">project</a> <a href="/tags/syntax/" style="font-size: 1em; color: #d3d3d3">syntax</a> <a href="/tags/tutorial/" style="font-size: 1em; color: #d3d3d3">tutorial</a></div></div><div class="console-card history" onclick="heo.hideConsole()"> </div></div></div><div class="button-group"><div class="console-btn-item"> <a class="darkmode_switchbutton" onclick="rm.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="fas fa-moon" style="font-size: 1rem;"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="heo.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="fas fa-arrows-alt-h"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="heo.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="fas fa-keyboard"></i></a></div><div class="console-btn-item" id="assist-open" onclick="heo.hideConsole()" title="无障碍工具栏"><a class="assist-btn"><i class="fas fa-wheelchair"></i></a></div><div class="console-btn-item" id="consoleCommentBarrage" onclick="heo.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="fa-solid fa-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="heo.musicToggle()" title="音乐开关"><a class="music-switch"><i class="fas fa-music"></i></a></div></div><div class="console-mask" onclick="heo.hideConsole()" href="javascript:void(0);"></div></div><header class="post-bg" id="page-header" style="background-image: url('/image/img-background/33.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="善良的xwysyy"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.png"/><span class="site-name">善良的xwysyy</span></a></span><div id="none_space"></div><div class="mask-name-container"><center id="name-container"><a id="page-name" href="javascript:btf.scrollToDest(0, 500)">PAGE_NAME</a></center></div><div id="menus"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon fas fa-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">主页</div><div class="back-menu-list"><a class="back-menu-item" href="https://index.xwysyy.cn" title="xwysyy主页" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://image.xwysyy.cn/img-icon/%E5%A4%B4%E5%83%8F.jpg"/><span class="back-menu-item-text">xwysyy主页</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">博客线路</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.xwysyy.cn" title="腾讯云线路" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://image.xwysyy.cn/img-icon/cube1.png"/><span class="back-menu-item-text">腾讯云主线路</span></a><a class="back-menu-item" href="https://vercel.xwysyy.cn" title="Vercel线路" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://image.xwysyy.cn/img-icon/cube2.png"/><span class="back-menu-item-text">Vercel线路</span></a><a class="back-menu-item" href="https://www.xwysyy.life" title="Github线路" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://image.xwysyy.cn/img-icon/cube4.png"/><span class="back-menu-item-text">Github线路</span></a><a class="back-menu-item" href="https://netlify.xwysyy.cn" title="Netlify线路" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://image.xwysyy.cn/img-icon/cube5.png"/><span class="back-menu-item-text">Netlify线路</span></a><a class="back-menu-item" href="https://xwysyy.pages.dev" title="Cloudflare线路" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://image.xwysyy.cn/img-icon/cube6.png"/><span class="back-menu-item-text">Cloudflare线路</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">部署项目</div><div class="back-menu-list"><a class="back-menu-item" href="https://pan.xwysyy.cn" title="xwysyy云盘" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://image.xwysyy.cn/img-icon/cube7.png"/><span class="back-menu-item-text">xwysyy云盘</span></a><a class="back-menu-item" href="https://cube.xwysyy.cn" title="Lijz的魔方小站" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://image.xwysyy.cn/img-icon/cube9.png"/><span class="back-menu-item-text">Lijz的魔方小站</span></a><a class="back-menu-item" href="https://chatgpt.xwysyy.cn" title="xwysyy ChatGPT" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://image.xwysyy.cn/img-icon/cube13.png"/><span class="back-menu-item-text">xwysyy ChatGPT</span></a></div></div></div></div><div class="nav-button" id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn"><i class="fas fa-arrow-up"></i><span id="percent" onclick="btf.scrollToDest(0,500)"> </span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/log/"><i class="fa-fw fas fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://uptime-kuma.xwysyy.cn/status/monitor"><i class="fa-fw fas fa-shield-alt"></i><span> 监控</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-alt"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/charts/"><i class="fa-fw fas fa-chart-area"></i><span> 统计</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></li><li><a class="site-page child" href="/ToDoList/"><i class="fa-fw fas fa-bell"></i><span> 待办</span></a></li><li><a class="site-page child" href="/records/"><i class="fa-fw fas fa-comments"></i><span> 文字瞬间</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></li><li><a class="site-page child" href="/friends/"><i class="fa-fw fas fa-user-friends"></i><span> 鱼塘</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-archive"></i><span> 项目</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://xwysyy.github.io/Fireworks"><i class="fa-fw fa fa-fire"></i><span> 烟花</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://xwysyy.github.io/reference"><i class="fa-fw fa fa-code"></i><span> 参考</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://xwysyy.github.io/Music"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about-chat/"><i class="fa-fw fas fa-comment"></i><span> 交互版</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-envelope"></i><span> 静态版</span></a></li><li><a class="site-page child" href="/essay/"><i class="fa-fw fas fa-edit"></i><span> 杂谈</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MySQL</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-01T16:00:00.000Z" title="发表于 2023-05-02 00:00:00">2023-05-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-02T07:29:54.214Z" title="更新于 2023-05-02 15:29:54">2023-05-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/syntax/">syntax</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">6196</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>23分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MySQL"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>MySQL</h1>
+<p>MySQL 是一个数据库管理系统，数据库系统控制着数据的存储于操作。SQL 是结构化查询语言（Structed Query Language），是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理数据库系统。MySQL 是开源数据库用来存储数据，SQL 是查询语言可以对MySQL进行操作</p>
+<h2 id="1-安装">1. 安装</h2>
+<h3 id="1-Windows-安装">1. Windows 安装</h3>
+<p>下载地址：</p>
+<p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/installer/">https://dev.mysql.com/downloads/installer/</a></p>
+<p>可视化客户端：MySQL-Front</p>
+<p><a target="_blank" rel="noopener" href="https://mysql-front.en.softonic.com/">https://mysql-front.en.softonic.com/</a></p>
+<h3 id="2-Linux-安装">2. Linux 安装</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># CentOS7</span><br><span class="line"># 先查看版本号</span><br><span class="line">cat /etc/centos-release</span><br><span class="line"></span><br><span class="line"># 安装wget</span><br><span class="line">yum install wget</span><br><span class="line"></span><br><span class="line"># 然后找到对应yum源</span><br><span class="line">wget http://repo.mysql.com/mysql57-community-release-el7.rpm</span><br><span class="line"></span><br><span class="line"># 配置 MySQL5.7</span><br><span class="line">rpm -ivh mysql57-community-release-el7.rpm</span><br><span class="line"></span><br><span class="line"># 安装 Mysql 服务</span><br><span class="line">yum install mysql-server</span><br><span class="line"></span><br><span class="line"># 启动 Mysql 服务</span><br><span class="line">systemctl start mysqld</span><br><span class="line"></span><br><span class="line"># 查看状态</span><br><span class="line">systemctl status mysqld</span><br><span class="line"></span><br><span class="line"># 获取初始密码</span><br><span class="line">grep &#x27;temporary password&#x27; /var/log/mysqld.log</span><br><span class="line"></span><br><span class="line"># 初始化安全配置</span><br><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
+<p><strong>进入控制台</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
+<p><strong>创建用户</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE USER &#x27;user1&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;Mima123$&#x27;;</span><br><span class="line">CREATE USER &#x27;user1&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;Mima123$&#x27;;</span><br></pre></td></tr></table></figure>
+<p>注意，这是创建用户 user1，密码为 Mima123$。 根据你的需求使用不同的用户名密码。</p>
+<p>为什么创建一个用户要用两条命令？</p>
+<p>@符号后面的 ‘localhost’ 表示该用户可以从localhost或者127.0.0.1地址连接访问数据库，也就是从本机访问数据库</p>
+<p>@符号后面的 ‘%’ 表示该用户可以从其它IP地址连接访问数据库。</p>
+<p><strong>授权</strong></p>
+<p>随后输入如下命令，赋予user1用户所有权限，就是可以 该DBMS系统上 访问所有数据库里面所有的表</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">ON</span> <span class="operator">*</span>.<span class="operator">*</span> <span class="keyword">TO</span> <span class="string">&#x27;user1&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">ON</span> <span class="operator">*</span>.<span class="operator">*</span> <span class="keyword">TO</span> <span class="string">&#x27;user1&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>如果你只想赋予 user1用户，只能读取数据库mydb的表table1 的权限，就可以这样写</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>  <span class="keyword">ON</span> mydb.table1 <span class="keyword">TO</span> <span class="string">&#x27;user1&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>  <span class="keyword">ON</span> mydb.table1 <span class="keyword">TO</span> <span class="string">&#x27;user1&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>退出</strong></p>
+<p>最后，输入 <code>quit</code> 并回车，退出mysql命令行客户端。</p>
+<p><strong>修改密码</strong></p>
+<p>如果以后你想修改该用户的 密码，可以执行下面的 命令</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span> PASSWORD <span class="keyword">FOR</span> <span class="string">&#x27;user1&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> <span class="operator">=</span> PASSWORD(<span class="string">&#x27;otherpassword&#x27;</span>);   </span><br><span class="line"><span class="keyword">SET</span> PASSWORD <span class="keyword">FOR</span> <span class="string">&#x27;user1&#x27;</span>@<span class="string">&#x27;%&#x27;</span> <span class="operator">=</span> PASSWORD(<span class="string">&#x27;otherpassword&#x27;</span>); </span><br></pre></td></tr></table></figure>
+<p><strong>设置开机自动运行MySQL服务</strong></p>
+<p>数据库服务 通常应该 设置为 开机就自行启动的。 这样，即使服务器宕机了，重启后，也不需要我们手工启动数据库服务。</p>
+<p>怎么设置 开机自动运行MySQL服务 呢？</p>
+<p>如果你使用的是 centos 7 版本， 执行命令 <code>systemctl enable mysqld</code></p>
+<p>如果你使用的是 centos 6 版本， 执行命令 <code>chkconfig --level 345 mysqld on</code></p>
+<p><strong>打开防火墙3306端口</strong>（如本地连接不用开启）</p>
+<p>我们的程序有时候是通过网络远程访问 MySQL数据库服务的。</p>
+<p>这时，需要让防火墙打开3306端口，以便外部程序可以通过网络访问。</p>
+<p>如果你是CentOS7的系统，执行如下两条命令，分别是 打开 mysql服务3306端口，并且使规则立即生效</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-service=mysql --permanent</span><br><span class="line">firewall-cmd  --reload</span><br></pre></td></tr></table></figure>
+<p>你是CentOS6的系统，执行如下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -I INPUT -p TCP --dport 3306 -j ACCEPT;/sbin/service iptables save</span><br></pre></td></tr></table></figure>
+<p>禁用远程连接：</p>
+<p>关闭 3306 端口</p>
+<p>修改MySQL的my.cnf文件，在文件中打开skip-networking这一行配置（没有这个配置，就自己增加这一行）。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">skip-networking</span><br></pre></td></tr></table></figure>
+<p>禁用用户远程登录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">update user set host = &quot;localhost&quot; where user = &quot;root&quot; and host = &quot;%&quot;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<p>重新打开远程登录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">update user set host = &quot;%&quot; where user = &quot;root&quot;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<h3 id="3-MacOS-安装">3. MacOS 安装</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
+<p>进入控制台</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
+<h2 id="2-数据库操作">2. 数据库操作</h2>
+<p>记住所有 mysql 命令都需要以分号 <code>;</code> 结尾</p>
+<p>进入 mysql 控制台</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -uroot -pMima123$</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>root 为用户名, -p后边可以直接跟密码（不需要空格），也可以等着 Prompt 再输入</p>
+</blockquote>
+<p>列数所有数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+<p>创建数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create database 数据库名;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果只是简单的输入 <code>CREATE DATABASE data</code> 这样的命令，字符编码通常默认是 latin编码， 通常不适合中文。</p>
+</blockquote>
+<p>创建 UTF8 编码数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE 数据库名 CHARACTER SET utf8mb4  COLLATE utf8mb4_unicode_520_ci;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意不能使用 utf8，需要设置 utf8mb4，因为 mysql 中的 UTF8 是3个字节，而真正的 UTF8 是四个字节</p>
+</blockquote>
+<p>删除数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP DATABASE 数据库名;</span><br></pre></td></tr></table></figure>
+<p>选择/进入数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use 数据库名</span><br></pre></td></tr></table></figure>
+<p><strong>数据库导出、导入</strong></p>
+<p><strong>导出</strong></p>
+<p>执行下面的命令可以把byhy数据库里面所有的数据导出为sql数据文件</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">mysqldump –u username –p --database dbname &gt; data.sql</span><br></pre></td></tr></table></figure>
+<p>执行后，需要输入用户对应的密码</p>
+<p><strong>导入</strong></p>
+<p>执行下面的命令可以把 导出为sql数据文件 的数据 导入到 数据库byhy中</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">mysql –u username –p  &lt; data.sql</span><br></pre></td></tr></table></figure>
+<p>执行后，需要输入用户对应的密码</p>
+<p>控制台中导入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use database_name</span><br><span class="line">source d:/bak.sql</span><br></pre></td></tr></table></figure>
+<h2 id="3-表的操作">3. 表的操作</h2>
+<p>在做表操作的时候，需要用 <code>use</code> 命令先选择需要操作的数据库</p>
+<p><strong>列出当前数据库中所有表</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show tables</span><br></pre></td></tr></table></figure>
+<p><strong>创建表</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE user (</span><br><span class="line">  id int NOT NULL AUTO_INCREMENT,</span><br><span class="line">  username varchar(150)  NOT NULL,</span><br><span class="line">  `password` varchar(128)  NOT NULL,</span><br><span class="line">  realname varchar(30)  NOT NULL,</span><br><span class="line">  PRIMARY KEY (id)</span><br><span class="line">) ENGINE=InnoDB;</span><br></pre></td></tr></table></figure>
+<p><code>CREATE TABLE</code> 就是创建 表的 SQL 语句 后面跟 表的名字，这里就是 user 作为表名。</p>
+<p>接下来括号里面的 是表中 各列的数据类型、特性的描述。</p>
+<p>前面 4 行指定了该表中有 4 列， 每列的 名字分别为 id、username、password、realname。</p>
+<p>其中 id 是整数类型， 其他的都是字符串类型。</p>
+<p>由于 password正好 是MySQL的一个关键字， 我们的字段名如果和关键字重名，应该用 <strong>反引号</strong> 把字段包起来，表示这不是关键字。</p>
+<p>其中：</p>
+<p><code>NOT NULL</code> 表示这列的数据不能为空。 就是每条记录，这一列里面一定要有数据内容。</p>
+<p><code>AUTO_INCREMENT</code> 表示该列中的字段内容是自动递增的，也就是从1开始，添加一条记录id字段的值就自动加1</p>
+<p>通常每张表，就应该有个 AUTO_INCREMENT 的 id字段， 为每条记录 产生一个编号。</p>
+<p><code>PRIMARY KEY (id)</code> 这行 指定了id这列作为主键。 主键的概念，我们后面会讲。</p>
+<p>最后面的 <code>ENGINE=InnoDB</code> 指定了该表使用 InnoDB 作为该表的存储引擎（storage engine）。 MySQL有两种存储引擎 MyISAM 和 InnoDB。 不同存储引擎使用不同的方法来对表数据存储和读取。 表数据不同的使用方式，不同的存储引擎效率不一样。</p>
+<p>大部分情况下，我们应该使用InnoDB。</p>
+<p>在 MySQL 5.5.5 以后，缺省的存储引擎就是 InnoDB ，所以也可以不指定存储引擎，就是InnoDB。</p>
+<p>上面的例子中，包括了两种类型的列：int 和 varchar。</p>
+<p>MySQL 支持 很多种列数据类型， 具体可以参考 <a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/data-types.html">MySQL官方网站</a></p>
+<p>不同的数据类型存储不同的数据。 比如 年龄 适合用 SMALLINT， 而 名字 适合用 CHAR 或者 VARCHAR， 出生日期 适合用 DATETIME。</p>
+<p><strong>删除表</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP TABLE 表名;</span><br></pre></td></tr></table></figure>
+<p><strong>更改表名</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">RENAME TABLE 表1 TO 表1新名称;</span><br><span class="line"></span><br><span class="line">// 更改多个表名，用逗号隔开</span><br><span class="line">RENAME TABLE table1 to new_table1, table2 to new_table2;</span><br></pre></td></tr></table></figure>
+<h2 id="4-更改表结构">4. 更改表结构</h2>
+<p>修改表结构包括很多种处理 ： 添加、删除、重命名 列， 添加、删除、修改索引、主键等等。</p>
+<p>具体可以参考 <a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/alter-table.html">MySQL官方网站</a></p>
+<p><strong>添加列</strong></p>
+<p>在user表中添加两列 description 和 qq</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER TABLE user ADD `description` varchar(850) NOT NULL, ADD `qq` varchar(20) NOT NULL;</span><br></pre></td></tr></table></figure>
+<p><strong>删除列</strong><br>
+如果要在user表中删除两列 description 和 qq</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER TABLE user DROP `description` , DROP `qq`;</span><br></pre></td></tr></table></figure>
+<p><strong>修改列</strong></p>
+<p>如果要在user表中修改列 realname 名字为 realname1</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER TABLE user CHANGE  `realname` `realname1`  varchar(30) NOT NULL;</span><br></pre></td></tr></table></figure>
+<p>如果要在user表中修改列 realname 名字为 realname1， <code>并且修改类型</code> 为 char(30)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER TABLE user CHANGE  `realname` `realname1`  char(30) NOT NULL;</span><br></pre></td></tr></table></figure>
+<h2 id="5-插入表记录操作">5. 插入表记录操作</h2>
+<p>以上都是数据库结构的操作，而数据库还没有实际内容，现在学习操作表记录， 就是对记录的 添加、查询、修改、删除。俗称的增删改查。</p>
+<p>前面我们使用如下SQL语句 创建了名为user的表</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">user</span> (</span><br><span class="line">  `id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  `username` <span class="type">varchar</span>(<span class="number">150</span>)  <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `password` <span class="type">varchar</span>(<span class="number">128</span>)  <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `realname` <span class="type">varchar</span>(<span class="number">30</span>)  <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB;</span><br></pre></td></tr></table></figure>
+<h3 id="5-1-添加记录">5.1 <strong>添加记录</strong></h3>
+<p>这还是一张空表，要添加一条记录，使用 INSERT INTO 语句，</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">user</span> (username,`password`,realname) <span class="keyword">VALUES</span> (<span class="string">&#x27;byhy1&#x27;</span>,<span class="string">&#x27;password1&#x27;</span>,<span class="string">&#x27;baiyueheiyu1&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，我们不需要为id这个字段填上对应的值，因为它是 AUTO_INCREMENT 的，MySQL系统会自动为这个字段填值。再有就是有些字段如果有默认值的话，我们也可以不需要赋值。</p>
+</blockquote>
+<h3 id="5-1-字符编码（中文字符）">5.1 字符编码（中文字符）</h3>
+<p>因为MySQL缺省的字符编码是latin1（拉丁字符编码），这种字符编码是不支持存储中文的。</p>
+<p>要存储中文，推荐使用utf8字符编码。</p>
+<p>我们可以：</p>
+<ul>
+<li>指定MySQL <code>整个系统</code> 的缺省字符编码</li>
+<li>也可以指定 <code>某个数据库</code> 的缺省字符编码</li>
+<li>也可以指定 <code>某张表</code> 的缺省字符编码</li>
+<li>也可以指定 <code>表中某列</code> 的字符编码</li>
+</ul>
+<p>比如，我们在创建user表的时候，就可以指定字符编码方式，如下所示</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">user</span> (</span><br><span class="line">  `id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  `username` <span class="type">varchar</span>(<span class="number">150</span>)  <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `password` <span class="type">varchar</span>(<span class="number">128</span>)  <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `realname` <span class="type">varchar</span>(<span class="number">30</span>)  <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) </span><br><span class="line"><span class="type">CHARACTER</span> <span class="keyword">SET</span> utf8mb4</span><br><span class="line"><span class="keyword">COLLATE</span> utf8mb4_unicode_520_ci;</span><br></pre></td></tr></table></figure>
+<p>这样，我们添加记录时，里面可以有中文字符。如下所示</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">user</span> (username,`password`,realname) <span class="keyword">VALUES</span> (<span class="string">&#x27;byhy1&#x27;</span>,<span class="string">&#x27;password1&#x27;</span>,<span class="string">&#x27;白月黑羽1&#x27;</span>);</span><br><span class="line">Query OK, <span class="number">1</span> <span class="type">row</span> affected (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+<p>我们更加推荐，在创建数据库的时候，就指定缺省字符编码。这样就不需要创建每张表都去指定字符编码方式。</p>
+<p>这样指定</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE byhy <span class="type">CHARACTER</span> <span class="keyword">SET</span> utf8mb4  <span class="keyword">COLLATE</span> utf8mb4_unicode_520_ci;</span><br></pre></td></tr></table></figure>
+<p>然后，我们再创建user表，就不需要指定utf8编码了。</p>
+<p><strong>添加多条记录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO user (username,`password`,realname) VALUES </span><br><span class="line">    (&#x27;byhy2&#x27;,&#x27;password2&#x27;,&#x27;白月黑羽2&#x27;),</span><br><span class="line">    (&#x27;byhy3&#x27;,&#x27;password3&#x27;,&#x27;白月黑羽3&#x27;),</span><br><span class="line">    (&#x27;byhy4&#x27;,&#x27;password4&#x27;,&#x27;白月黑羽4&#x27;),</span><br><span class="line">    (&#x27;byhy5&#x27;,&#x27;password5&#x27;,&#x27;白月黑羽5&#x27;);</span><br></pre></td></tr></table></figure>
+<h3 id="5-2-日期和时间记录">5.2 日期和时间记录</h3>
+<p>我们创建这样一张订单表</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `<span class="keyword">order</span>` (</span><br><span class="line">    id <span class="type">INT</span> AUTO_INCREMENT,</span><br><span class="line">    title <span class="type">VARCHAR</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    place_time DATETIME,</span><br><span class="line">    due_date <span class="type">DATE</span>,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) </span><br></pre></td></tr></table></figure>
+<p>这张订单表里有两个字段</p>
+<ul>
+<li>place_time 表示下订单的时间点，是 DATETIME 类型</li>
+<li>due_date 表示订单失效有效期截止日， 是 DATE 类型</li>
+</ul>
+<p>DATETIME 类型，我们插入的数据格式是这样的 <code>2019-12-20 10:01:00</code> 。</p>
+<p>甚至可以精确到微秒，像这样 <code>2019-12-20 10:01:00.999999</code> ，如果要精确到微秒，该字段的定义要指定长度为6 ，像这样 <code>place_time DATETIME(6)</code></p>
+<p>DATE 类型，我们插入的数据格式是这样的 <code>2019-12-20</code> 。</p>
+<p>对于上面的表， 我们可以这样插入一条记录</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `<span class="keyword">order</span>` (title,place_time,due_date) <span class="keyword">VALUES</span> </span><br><span class="line">    (<span class="string">&#x27;手机订单1&#x27;</span>,<span class="string">&#x27;2019-05-04 10:01:00&#x27;</span>,<span class="string">&#x27;2019-05-06&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="6-查询记录">6. 查询记录</h2>
+<h3 id="6-1-查询记录">6.1 查询记录</h3>
+<p>要查询该表中所以的记录，使用 SQL语句 select 进行查询</p>
+<p>如下所示</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">user</span>;</span><br></pre></td></tr></table></figure>
+<p>得到的结果是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+----+----------+-----------+---------------+</span><br><span class="line">| id | username | password  | realname      |</span><br><span class="line">+----+----------+-----------+---------------+</span><br><span class="line">|  1 | byhy1    | password1 | 白月黑羽1     |</span><br><span class="line">|  2 | byhy2    | password2 | 白月黑羽2     |</span><br><span class="line">|  3 | byhy3    | password3 | 白月黑羽3     |</span><br><span class="line">|  4 | byhy4    | password4 | 白月黑羽4     |</span><br><span class="line">|  5 | byhy5    | password5 | 白月黑羽5     |</span><br><span class="line">+----+----------+-----------+---------------+</span><br><span class="line">5 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<p>这样就可以查看user 表中的所有记录的所有列的值。</p>
+<p>上面 ，select 语句中的 * 表示 查看所有的列</p>
+<p><strong>查看指定列</strong></p>
+<p>有的时候，表中的列很多，我们并不想查看所有的列的内容。</p>
+<p>这时候，可以指定要查看的列。</p>
+<p>如果，这个user表，我们只想查看 id和username 这两列的信息，就可以这样写</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> id,username  <span class="keyword">from</span> <span class="keyword">user</span>;</span><br></pre></td></tr></table></figure>
+<p>得到的结果是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+----+----------+</span><br><span class="line">| id | username |</span><br><span class="line">+----+----------+</span><br><span class="line">|  1 | byhy1    |</span><br><span class="line">|  2 | byhy2    |</span><br><span class="line">|  3 | byhy3    |</span><br><span class="line">|  4 | byhy4    |</span><br><span class="line">|  5 | byhy5    |</span><br><span class="line">+----+----------+</span><br><span class="line">5 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-查询过滤">6.2 查询过滤</h3>
+<p>我们有时候只需要查询其中符合某些条件的部分信息。 这就叫过滤查询。</p>
+<p>根据进过滤条件查询，我们使用 <code>where从句</code></p>
+<p>比如，上面的user表，我们只需要查询 用户名为 byhy3 的那个用户的信息，就可以这样</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> username<span class="operator">=</span><span class="string">&#x27;byhy3&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>得到的结果是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+----+----------+-----------+---------------+</span><br><span class="line">| id | username | password  | realname      |</span><br><span class="line">+----+----------+-----------+---------------+</span><br><span class="line">|  3 | byhy3    | password3 | 白月黑羽3     |</span><br><span class="line">+----+----------+-----------+---------------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<p>其中 <code>username='byhy3'</code> 里面的等号就是一个过滤条件的 <code>操作符</code> ，表示过滤条件是查找记录的username字段值等于byhy3。</p>
+<p>如果我们只需要查询 id为 2 的那个用户的信息，就可以这样</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> id<span class="operator">=</span><span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>除了等于条件（使用 =）， 还有</p>
+<ul>
+<li>不等于（使用 &lt;&gt; 或者 !=）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> id<span class="operator">!=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>大于（使用 &gt; ）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> id<span class="operator">&gt;</span><span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>小于（使用 &lt; ）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> id<span class="operator">&lt;</span><span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>大于等于（使用 &gt;= ）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> id<span class="operator">&gt;=</span><span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>小于等于（使用 &lt;= ）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> id<span class="operator">&lt;=</span><span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>包含字符 （使用 like 和 % ）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 以 byhy 开头*/</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> username <span class="keyword">like</span> &quot;byhy%&quot;;</span><br><span class="line"><span class="comment">/* 以 33 结尾*/</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> username <span class="keyword">like</span> &quot;%33&quot;;</span><br><span class="line"><span class="comment">/* 以 byhy 开头 并且 以 33 结尾*/</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> username <span class="keyword">like</span> &quot;byhy%33&quot;;</span><br><span class="line"><span class="comment">/* 包含 byhy */</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> username <span class="keyword">like</span> &quot;%byhy%&quot;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在集合里面 （使用 in）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* id 在指定集合里面 */</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> id <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* usernmae 在指定集合里面 */</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> username  <span class="keyword">in</span> (&quot;byhy1&quot;,&quot;byhy2&quot;);</span><br></pre></td></tr></table></figure>
+<h3 id="6-3-过滤多个条件">6.3 <strong>过滤多个条件</strong></h3>
+<ol>
+<li><strong>and 操作符</strong></li>
+</ol>
+<p>如果你要查询的记录过滤条件是多个，并且要 <code>同时满足</code> ，就使用 and 关键字连接多个 过滤条件</p>
+<p>比如，我们用下面的语句创建客户表 customer1，并且插入一些数据</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> customer1 (</span><br><span class="line">  `id` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  `username` <span class="type">varchar</span>(<span class="number">150</span>)  <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `level` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `coin` <span class="type">int</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">) ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> customer1 (username,level,coin) <span class="keyword">VALUES</span> </span><br><span class="line">    (<span class="string">&#x27;cus01&#x27;</span>,<span class="number">15</span>, <span class="number">5</span>),</span><br><span class="line">    (<span class="string">&#x27;cus02&#x27;</span>,<span class="number">5</span>,  <span class="number">315</span>),</span><br><span class="line">    (<span class="string">&#x27;cus03&#x27;</span>,<span class="number">3</span>,  <span class="number">215</span>),</span><br><span class="line">    (<span class="string">&#x27;cus04&#x27;</span>,<span class="number">11</span>, <span class="number">6615</span>),</span><br><span class="line">    (<span class="string">&#x27;cus05&#x27;</span>,<span class="number">22</span>, <span class="number">115</span>),</span><br><span class="line">    (<span class="string">&#x27;cus06&#x27;</span>,<span class="number">6</span>,  <span class="number">4415</span>),</span><br><span class="line">    (<span class="string">&#x27;cus07&#x27;</span>,<span class="number">7</span>,  <span class="number">315</span>),</span><br><span class="line">    (<span class="string">&#x27;cus08&#x27;</span>,<span class="number">4</span>,  <span class="number">15</span>),</span><br><span class="line">    (<span class="string">&#x27;cus09&#x27;</span>,<span class="number">9</span>,  <span class="number">315</span>),</span><br><span class="line">    (<span class="string">&#x27;cus10&#x27;</span>,<span class="number">44</span>, <span class="number">45</span>),</span><br><span class="line">    (<span class="string">&#x27;cus11&#x27;</span>,<span class="number">2</span>,  <span class="number">215</span>),</span><br><span class="line">    (<span class="string">&#x27;cus12&#x27;</span>,<span class="number">1</span>,  <span class="number">815</span>),</span><br><span class="line">    (<span class="string">&#x27;cus13&#x27;</span>,<span class="number">15</span>, <span class="number">13</span>),</span><br><span class="line">    (<span class="string">&#x27;cus14&#x27;</span>,<span class="number">25</span>, <span class="number">1566</span>),</span><br><span class="line">    (<span class="string">&#x27;cus15&#x27;</span>,<span class="number">12</span>, <span class="number">125</span>),</span><br><span class="line">    (<span class="string">&#x27;cus16&#x27;</span>,<span class="number">8</span>,  <span class="number">75</span>);</span><br></pre></td></tr></table></figure>
+<p>我们 要查询 id &gt; 10 并且等级 level值 小于 15的用户。就可以这样</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> customer1 <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">10</span> <span class="keyword">and</span> level<span class="operator">&lt;</span><span class="number">15</span>;</span><br></pre></td></tr></table></figure>
+<p>得到的结果是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+----+----------+-------+------+</span><br><span class="line">| id | username | level | coin |</span><br><span class="line">+----+----------+-------+------+</span><br><span class="line">| 11 | cus11    |     2 |  215 |</span><br><span class="line">| 12 | cus12    |     1 |  815 |</span><br><span class="line">| 15 | cus15    |    12 |  125 |</span><br><span class="line">| 16 | cus16    |     8 |   75 |</span><br><span class="line">+----+----------+-------+------+</span><br><span class="line">4 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<p>如果你有更多的过滤条件，就继续在后面加and，比如</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> customer1 <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">10</span> <span class="keyword">and</span> level<span class="operator">&lt;</span><span class="number">15</span> <span class="keyword">and</span> coin<span class="operator">&lt;</span><span class="number">300</span>;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>or 操作符</strong></li>
+</ol>
+<p>如果你要查询的记录过滤条件是多个， <code>只要满足其中一个条件即可</code> ，就使用 or 关键字连接多个 过滤条件</p>
+<p>比如，我们 要查询 id &gt; 10 <code>或</code> 等级 level值 小于 15的用户。就可以这样</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> customer1 <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">10</span> <span class="keyword">or</span> level<span class="operator">&lt;</span><span class="number">15</span>;</span><br></pre></td></tr></table></figure>
+<p>注意优先级， and 优先级要比or高</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select *  from customer1 where (id &gt; 8 or level&lt;15)  and coin=315;</span><br></pre></td></tr></table></figure>
+<h3 id="6-4-子查询">6.4 子查询</h3>
+<p>已知有如下两张数据表，</p>
+<p>表名：学生表</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>姓名</th>
+<th>性别</th>
+<th>电话号码</th>
+<th>学历</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>白月黑羽</td>
+<td>男</td>
+<td>13000000001</td>
+<td>本科</td>
+</tr>
+<tr>
+<td>2</td>
+<td>紫气一元</td>
+<td>男</td>
+<td>13000000002</td>
+<td>硕士</td>
+</tr>
+<tr>
+<td>3</td>
+<td>无形冥主</td>
+<td>男</td>
+<td>13000000003</td>
+<td>博士</td>
+</tr>
+<tr>
+<td>4</td>
+<td>拜月魔巫</td>
+<td>女</td>
+<td>13000000004</td>
+<td>本科</td>
+</tr>
+</tbody>
+</table>
+<p>表名：成绩表</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>姓名</th>
+<th>课程</th>
+<th>分数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>白月黑羽</td>
+<td>语文</td>
+<td>100</td>
+</tr>
+<tr>
+<td>2</td>
+<td>紫气一元</td>
+<td>英语</td>
+<td>85</td>
+</tr>
+<tr>
+<td>3</td>
+<td>无形冥主</td>
+<td>语文</td>
+<td>100</td>
+</tr>
+<tr>
+<td>4</td>
+<td>无形冥主</td>
+<td>英语</td>
+<td>98</td>
+</tr>
+<tr>
+<td>5</td>
+<td>拜月魔巫</td>
+<td>数学</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p>要查询 考试成绩有100分的学生的电话号码</p>
+<p>可以使用如下SQL语句</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 电话号码 <span class="keyword">FROM</span> 学生表</span><br><span class="line"><span class="keyword">WHERE</span> 姓名 <span class="keyword">IN</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> 姓名 <span class="keyword">FROM</span> 成绩表 <span class="keyword">WHERE</span> 分数<span class="operator">=</span><span class="number">100</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>过滤条件 是 姓名在一个集合中，但是这个集合不是预先就知道的，而是 另外一个select查询 的结果。</p>
+<p>另外一个select 术语叫 <code>子查询</code> （subquery）。</p>
+<p>MySQL执行 语句时，会先执行子查询，获取分数为100分的学生姓名，放入集合中。 然后再执行外层查询。</p>
+<h3 id="6-5-多表连接查询">6.5 多表连接查询</h3>
+<p>上面的示例中，我们使用 子查询得到 考试成绩有100分的学生的电话号码</p>
+<p>其实，还可以使用 <code>连接查询</code> ，如下</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 电话号码 <span class="keyword">FROM</span> 学生表</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> 成绩表 <span class="keyword">ON</span>  学生表.姓名 <span class="operator">=</span> 成绩表.姓名</span><br><span class="line"><span class="keyword">WHERE</span> 成绩表.分数<span class="operator">=</span><span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<p><code>INNER JOIN</code> 语句必须紧跟在 <code>FROM</code> 语句 后面，表示连接哪张表，连接条件是什么。</p>
+<p>本例中，连接的是 <strong>成绩表</strong>， 连接条件是 <strong>相同的姓名</strong></p>
+<p>MySQL 在执行上面的SQL语句，会依次</p>
+<ul>
+<li>
+<p>查询 <code>学生表</code> 里面的每条记录</p>
+</li>
+<li>
+<p>针对这条记录，在 <code>成绩表中</code> 找 姓名 字段 和 本记录中姓名字段相同 的记录</p>
+<p>如果找到 ，将两条记录连接起来，形成一条包含两条记录内容的新的记录行，存在内存中</p>
+<p>如果找不到，忽略这条记录</p>
+</li>
+<li>
+<p>比较 成绩表中这条记录的 分数 字段是否等于100 ，如果相等，就放入<strong>结果集</strong>中 否则忽略这条记录</p>
+</li>
+</ul>
+<p>本例中的连接查询 INNER JOIN 是 内连接，是最常用的一种连接查询。</p>
+<p>还有3 种外连接查询：RIGHT OUTER JOIN、LEFT OUTER JOIN、FULL OUTER JOIN，因为不是特别常用，这里我们暂不介绍，感兴趣的朋友可以自行网上查阅相关资料。</p>
+<h3 id="6-6-查询结果去重">6.6 查询结果去重</h3>
+<p>前面示例中，我们创建了这样的一张 成绩表</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">+----+--------------+--------+--------+</span><br><span class="line">| <span class="built_in">id</span> | 姓名         | 课程   | 分数   |</span><br><span class="line">+----+--------------+--------+--------+</span><br><span class="line">|  <span class="number">1</span> | 白月黑羽     | 语文   |    <span class="number">100</span> |</span><br><span class="line">|  <span class="number">2</span> | 紫气一元     | 英语   |     <span class="number">85</span> |</span><br><span class="line">|  <span class="number">3</span> | 无形冥主     | 语文   |    <span class="number">100</span> |</span><br><span class="line">|  <span class="number">4</span> | 无形冥主     | 英语   |     <span class="number">98</span> |</span><br><span class="line">|  <span class="number">5</span> | 拜月魔巫     | 数学   |    <span class="number">100</span> |</span><br><span class="line">+----+--------------+--------+--------+</span><br></pre></td></tr></table></figure>
+<p>如果我们想查看 有哪些学科 学生考试得过满分 ，</p>
+<p>可以写这样的SQL语句</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> 课程  <span class="keyword">from</span> 成绩表 <span class="keyword">where</span> 分数<span class="operator">=</span><span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<p>结果如下</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">+--------+</span><br><span class="line">| 课程   |</span><br><span class="line">+--------+</span><br><span class="line">| 语文   |</span><br><span class="line">| 语文   |</span><br><span class="line">| 数学   |</span><br><span class="line">+--------+</span><br></pre></td></tr></table></figure>
+<p>可以发现 语文 重复了两次。</p>
+<p>因为有 两条记录 语文考试成绩为 100分。</p>
+<p>但是我们现在的目的是 ： 只要看有哪些学科，当然不希望重复。</p>
+<p>这时，可以使用关键字 <code>distinct</code> 。</p>
+<p>如下</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> 课程  <span class="keyword">from</span> 成绩表 <span class="keyword">where</span> 分数<span class="operator">=</span><span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<p>就可以去掉结果中重复的内容了。</p>
+<h3 id="6-7-查询结果排序">6.7 查询结果排序</h3>
+<p>我们经常需要，查询一个结果，并且按照某个字段的值进行排序。</p>
+<p>比如，上面的查询</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> customer1 <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p>结果需要安装 coin 的值 由小到大排序，怎么办？</p>
+<p>这时，可以使用 <code>order by</code></p>
+<p>比如</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> customer1 <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">10</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> coin;</span><br></pre></td></tr></table></figure>
+<p>表示查询结果记录 根据 coin 字段的值 升序（ASC） 排列。 所谓升序，就是从小到大。</p>
+<p>缺省就是按照升序排列，当然你也可以指定是升序，像这样</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> customer1 <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">10</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> coin <span class="keyword">asc</span>;</span><br></pre></td></tr></table></figure>
+<p>如果你想 反过来，降序排列，则使用 <code>desc</code> ，像这样</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> customer1 <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">10</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> coin <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+<p>有时候，你希望 显示记录 先根据 coin排列 ，coin相同的再根据 level 进行排序，就可以这样 写</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> customer1 <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">10</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> coin, level;</span><br></pre></td></tr></table></figure>
+<p>你希望 显示记录 先根据 coin 升序 排列 ，coin相同的再根据 level 降序 排序，就可以这样 写</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> customer1 <span class="keyword">where</span> id <span class="operator">&gt;</span> <span class="number">10</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> coin, level <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="6-8-查询结果分页">6.8 查询结果分页</h3>
+<p>有的时候，SQL语句查询的结果可能有成千上万条记录（想象一下淘宝搜索 手机）。如果一下子全部返回，会耗费大量的CPU和内容，也是不需要的。</p>
+<p>这时候，我们的SQL语句可以指定 <code>分页</code> ，每次只返回一页数据。</p>
+<p>我们执行下面的SQL语句再插入一些数据到学生表中</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 学生表 (姓名,性别,电话号码,学历) <span class="keyword">VALUES</span> </span><br><span class="line">    (<span class="string">&#x27;白月黑羽101&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000101&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽102&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000102&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽103&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000103&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽104&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000104&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽105&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000105&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽106&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000106&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽107&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000107&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽108&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000108&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽109&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000109&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽110&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000110&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽111&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000111&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽112&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000112&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽113&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000113&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽114&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000114&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽115&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000115&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽116&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000116&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽117&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000117&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽118&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000118&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽119&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000119&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽120&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000120&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽121&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000121&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;白月黑羽122&#x27;</span>,<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;13100000122&#x27;</span>, <span class="string">&#x27;本科&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>然后，如果我们设置每页最多5条记录，返回第2页就可以这样写</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 学生表</span><br><span class="line">limit <span class="number">5</span> <span class="keyword">offset</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p><code>limit</code> 后面的数值 指定最多显示多少条记录， <code>offset</code> 后面的数值 指定了当前显示第几页，第1页是0，第2页是1…</p>
+<h3 id="6-8-记录数量、平均值、最大值、最小值">6.8 记录数量、平均值、最大值、最小值</h3>
+<p>有的时候，我们要获取符合某种条件的记录 有多少条。</p>
+<p>比如 ，我们想知道 学生表中 姓名以 白月黑羽 开头的 有多少条记录。</p>
+<p>可以使用 SQL函数 count ，如下所示</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 姓名 <span class="keyword">like</span> &quot;白月黑羽%&quot;;</span><br></pre></td></tr></table></figure>
+<p>count是 SQL 函数，用来返回记录数量。</p>
+<p>常用的SQL函数，还有</p>
+<ul>
+<li>
+<p>sum</p>
+<p>计算某列数字的总和，比如</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">sum</span>(分数) <span class="keyword">from</span> 成绩表;</span><br></pre></td></tr></table></figure>
+<p>就可以获取成绩表中所有记录分数 得分总和</p>
+</li>
+<li>
+<p>avg</p>
+<p>计算某列数字的平均，比如</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(分数) <span class="keyword">from</span> 成绩表;</span><br></pre></td></tr></table></figure>
+<p>就可以获取成绩表中所有记录平均之后的得分</p>
+</li>
+<li>
+<p>max</p>
+<p>得到某列数字的最大值，比如</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(分数) <span class="keyword">from</span> 成绩表;</span><br></pre></td></tr></table></figure>
+<p>就可以获取成绩表中所有记录的最高得分</p>
+</li>
+<li>
+<p>miin</p>
+<p>得到某列数字的最小值，比如</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">min</span>(分数) <span class="keyword">from</span> 成绩表;</span><br></pre></td></tr></table></figure>
+<p>就可以获取成绩表中所有记录的最低得分</p>
+</li>
+</ul>
+<h2 id="7-修改记录">7. 修改记录</h2>
+<p>我们经常需要更新表记录信息，比如一个用户更新了他的头像，消费后余额更新等等。</p>
+<p>MySQL更新记录使用的是 <code>update</code> 语句。</p>
+<p>前面我们曾经创建过customer1 表，如果我们要更新其中用户名为 cus16 这条记录，把coin值设置为 100，就可以这样写</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">update</span> customer1 <span class="keyword">set</span> coin<span class="operator">=</span><span class="number">100</span> <span class="keyword">where</span> username<span class="operator">=</span><span class="string">&#x27;cus16&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>注意， 这里也用到了 where 从句，限制了更新的 只是 username为cus16的这些记录。</p>
+<p>否则，如果没有where 从句，像这样</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">update</span> customer1 <span class="keyword">set</span> coin<span class="operator">=</span><span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<p>就会更新该表中所有的记录，把所有的记录的coin 全部设置为 100</p>
+<p>where 从句也是用来，过滤要更新的记录的， 用法和select里面where 从句的用法是一样的。</p>
+<p>如果我们要更新多个列里面的内容，比如要把username为cus16的记录，把coin值设置为 100，level值设置为 30，就可以这样写</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">update</span> customer1 <span class="keyword">set</span> coin<span class="operator">=</span><span class="number">100</span>,level<span class="operator">=</span><span class="number">30</span> <span class="keyword">where</span> username<span class="operator">=</span><span class="string">&#x27;cus16&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>另外SQL语句中间是可以换行的，像下面这样，也是可以的</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">update</span> customer1 </span><br><span class="line"><span class="keyword">set</span> </span><br><span class="line">  coin<span class="operator">=</span><span class="number">100</span>,</span><br><span class="line">  level<span class="operator">=</span><span class="number">30</span> </span><br><span class="line"><span class="keyword">where</span> username<span class="operator">=</span><span class="string">&#x27;cus16&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="8-删除记录">8. 删除记录</h2>
+<p>我们有时也需要删除表记录。</p>
+<p>MySQL删除记录使用的是 <code>delete from</code> 语句。</p>
+<p>前面我们曾经创建过customer1 表，如果我们要删除其中cus16这条记录，可以这样写</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> customer1  <span class="keyword">where</span> username<span class="operator">=</span><span class="string">&#x27;cus16&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>注意， 这里也用到了where 从句，限制了 删除的 只是 username为cus16的这些记录。</p>
+<p>否则，如果没有where 从句，像这样</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> customer1;</span><br></pre></td></tr></table></figure>
+<p>就会删除该表中所有的记录。</p>
+<p>删除表中所有的记录，但是表还在，这个和删除表 drop table 是不同的。</p>
+<p>where 从句也是用来过滤要删除的记录的， 用法和select里面where 从句的用法是一样的。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/Forece">Forece</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/Forece">https://github.com/Forece</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">转载自https://github.com/Forece</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/syntax/">syntax</a><a class="post-meta__tags" href="/tags/MySQL/">MySQL</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/syntax/CSS/" title="CSS"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/img-background/7.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CSS</div></div></a></div><div class="next-post pull-right"><a href="/syntax/Git/" title="Git"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/img-background/49.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Git</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/syntax/CSS%E7%AC%94%E8%AE%B0/" title="CSS笔记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/img-background/4.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-06</div><div class="title">CSS笔记</div></div></a></div><div><a href="/syntax/CSS/" title="CSS"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/img-background/7.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-24</div><div class="title">CSS</div></div></a></div><div><a href="/syntax/Git/" title="Git"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/img-background/49.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-02</div><div class="title">Git</div></div></a></div><div><a href="/syntax/HTML/" title="HTML"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/img-background/29.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-22</div><div class="title">HTML</div></div></a></div><div><a href="/syntax/LaTeX/" title="LaTeX"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/img-background/28.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-01</div><div class="title">LaTeX</div></div></a></div><div><a href="/syntax/Typora/" title="Typora"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/img-background/47.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-01</div><div class="title">Typora</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="cols"><div class="col"><div class="container"><div class="front avatarPanel"><div class="inner"><div class="player-title">Attributes</div><div class="player-avatar"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div></div></div><div class="back attributesPanel"><div class="inner"><div class="player-lv">LV.3</div><div class="player-name">善良的xwysyy</div><div class="attributes-value"><div class="attributes-value-item"><a href="/archives/"><div class="attributes">文章</div><div class="value-bar"><div class="value-bar-fill" style="width:21.00%"><div class="value-bar-fill-in" style="background: rgba(89, 230, 54,0.6)"></div></div></div><span>21/100</span></a></div><div class="attributes-value-item"><a href="/tags/"><div class="attributes">标签</div><div class="value-bar"><div class="value-bar-fill" style="width:16.00%"><div class="value-bar-fill-in" style="background: rgba(224, 20, 20, 0.6)"></div></div></div><span>16/100</span></a></div><div class="attributes-value-item"><a href="/categories/"><div class="attributes">分类</div><div class="value-bar"><div class="value-bar-fill" style="width:7.00%"><div class="value-bar-fill-in" style="background: rgba(30, 97, 226, 0.6)"></div></div></div><span>7/100</span></a></div></div></div></div></div></div><div class="col"><div class="container"><div class="front descriptionPanel"><div class="inner"><div class="player_description"><p>一念净心 花开遍世界<br>每临绝境 峰回路又转<br>但凭净信 自在出乾坤<br>恰似如梦初醒 归途在眼前</p></div><div class="play-bottom"></div></div></div><div class="back buttonPanel"><div class="inner"><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xwysyy"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xwysyy" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/m0_73844376" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="mailto:xwysyy@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div><div class="play-bottom"></div></div></div></div></div></div></div><div class="card-widget card-announcement"><div id="welcome-info"></div><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>welcome</span></div><div class="announcement_content"></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.</span> <span class="toc-text">1. 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Windows-%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. Windows 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Linux-%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. Linux 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-MacOS-%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. MacOS 安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">2. 数据库操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">3. 表的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%9B%B4%E6%94%B9%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.</span> <span class="toc-text">4. 更改表结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%8F%92%E5%85%A5%E8%A1%A8%E8%AE%B0%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.</span> <span class="toc-text">5. 插入表记录操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E6%B7%BB%E5%8A%A0%E8%AE%B0%E5%BD%95"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1 添加记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%EF%BC%88%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6%EF%BC%89"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.1 字符编码（中文字符）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E8%AE%B0%E5%BD%95"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.2 日期和时间记录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%9F%A5%E8%AF%A2%E8%AE%B0%E5%BD%95"><span class="toc-number">1.6.</span> <span class="toc-text">6. 查询记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E6%9F%A5%E8%AF%A2%E8%AE%B0%E5%BD%95"><span class="toc-number">1.6.1.</span> <span class="toc-text">6.1 查询记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E6%9F%A5%E8%AF%A2%E8%BF%87%E6%BB%A4"><span class="toc-number">1.6.2.</span> <span class="toc-text">6.2 查询过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E8%BF%87%E6%BB%A4%E5%A4%9A%E4%B8%AA%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.6.3.</span> <span class="toc-text">6.3 过滤多个条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.6.4.</span> <span class="toc-text">6.4 子查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.6.5.</span> <span class="toc-text">6.5 多表连接查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-6-%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E5%8E%BB%E9%87%8D"><span class="toc-number">1.6.6.</span> <span class="toc-text">6.6 查询结果去重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-7-%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E6%8E%92%E5%BA%8F"><span class="toc-number">1.6.7.</span> <span class="toc-text">6.7 查询结果排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-8-%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E5%88%86%E9%A1%B5"><span class="toc-number">1.6.8.</span> <span class="toc-text">6.8 查询结果分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-8-%E8%AE%B0%E5%BD%95%E6%95%B0%E9%87%8F%E3%80%81%E5%B9%B3%E5%9D%87%E5%80%BC%E3%80%81%E6%9C%80%E5%A4%A7%E5%80%BC%E3%80%81%E6%9C%80%E5%B0%8F%E5%80%BC"><span class="toc-number">1.6.9.</span> <span class="toc-text">6.8 记录数量、平均值、最大值、最小值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95"><span class="toc-number">1.7.</span> <span class="toc-text">7. 修改记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%88%A0%E9%99%A4%E8%AE%B0%E5%BD%95"><span class="toc-number">1.8.</span> <span class="toc-text">8. 删除记录</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By 善良的xwysyy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="refresh-cache" type="button" title="刷新缓存" onclick="refreshCache()"><i class="fas fa-refresh"></i></button><button type="button" title="切换背景" onclick="toggleWinbox()"><i class="fas fa-display"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script src="/js/cursor.js" async></script><script src="/js/jquery.js"></script><script src="/js/foot.js"></script><script defer src="/live2d-widget-master/autoload.js"></script><script async data-pjax src="/js/txmap.js"></script><script async data-pjax src="/js/bb.js"></script><script async data-pjax src="/js/waterfall.js"></script><script src="/js/background.js"></script><script data-pjax>obcboPic()</script><script src="/js/weather.js"></script><script src="http://fw.qq.com/ipaddress"></script><script src="/js/visitor.js"></script><script src="/js/weibo.js"></script><script src="/js/rightside_button1.js"></script><script src="/js/rightside_button2.js"></script><div id="fps"></div><script async data-pjax src="/js/music1.js"></script><script async data-pjax src="/js/music2.js"></script><script async src="/js/music3.js"></script><script src="/js/refresh.js"></script><script src="/js/console.js"></script><script src="/js/pace.js"></script><script src="/js/welcome.js"></script><canvas id="universe"></canvas><script src="/js/universe.js"></script><script src="/js/nav.js"></script><script src="/js/sun_moon.js" async></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="cf题补了吗,ddl赶了吗,考试复习了吗,看完赶紧去学习,上课别看了" data-fontsize="20px" data-random="true" async="async"></script><link rel="stylesheet" href="/css/aplayer.css" media="print" onload="this.media='all'"><script src="/js/aplayer.js"></script><script src="/js/meting.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="nav-music"><div id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()"> </div><meting-js id="8265539094" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><div class="contact-info"><div class="option"><i class="fas fa-warning"> </i><div class="bloktop"></div><div class="text"><div class="strip"></div><div class="aside_notice"><h1>警钟长鸣</h1><br>严禁将重要信息（如：key、token、cookie）、标识性信息、隐私性信息上传 <center><h3>遵守网络法规</h3><h3>保护信息安全</h3><h3>尊重个人意愿</h3><h3>警惕隐私泄露</h3><h2>铭记：</h2><h3>源代码面前无秘密</h3><h3>网络流量面前无秘密</h3></center></div></div></div><div class="option"><i class="fas fa-cube"></i><div class="blok"></div><div class="text"><div class="strip"></div><div class="post-reward"><div class="reward-button"><i class="fa-solid fa-bolt"></i></div><div class="reward-main">
+<ul class="reward-all">
+<li class="reward-item"><a href="https://Li-j-z.github.io" target="_blank">
+<img class="post-qr-code-img entered loaded" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64181ed4a682492fccdf27fa.jpg" alt="Li-j-z的魔方小站"></a>
+<div class="post-qr-code-desc">Li-j-z的魔方小站</div></li>
+<li class="reward-item"><a href="https://www.cnblogs.com/xwysyy/" target="_blank">
+<img class="post-qr-code-img entered loaded" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6432d8ed0d2dde5777c73749.png" alt="xwysyy博客园"></a>
+<div class="post-qr-code-desc">xwysyy博客园</div></li>
+</ul></div></div></div></div></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:24%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/algorithm/&quot;);" href="javascript:void(0);">algorithm</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover2.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/course/&quot;);" href="javascript:void(0);">course</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover3.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/note/&quot;);" href="javascript:void(0);">note</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover4.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/syntax/&quot;);" href="javascript:void(0);">syntax</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover5.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/project/&quot;);" href="javascript:void(0);">project</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover6.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/CPP/&quot;);" href="javascript:void(0);">CPP</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://npm.elemecdn.com/akilar-candyassets/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/tutorial/&quot;);" href="javascript:void(0);">tutorial</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.7.0" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a><a class="github-badge" target="_blank" href="https://cloud.tencent.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路部署于腾讯云" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-%E8%85%BE%E8%AE%AF%E4%BA%91-pink?style=flat&amp;logo=tencentqq" alt=""/></a><a class="github-badge" target="_blank" href="https://icp.gov.moe/" style="margin-inline:5px" data-title="萌ICP备20232640号" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/%E8%90%8CICP%E5%A4%87-20232640-fe1384?style-flat&amp;logo=data:image/png;base64,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" alt=""/></a><a class="github-badge" target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral" style="margin-inline:5px" data-title="本网站由又拍云提供CDN加速/云存储服务" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/CDN-%E5%8F%88%E6%8B%8D%E4%BA%91-00b6ff?style=flat&amp;logo=data:image/png;base64,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" alt=""/></a><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/" style="margin-inline:5px" data-title="冀ICP备2023010011号" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/%E5%86%80ICP%E5%A4%87-2023010011%E5%8F%B7-e1d492?style=flat&amp;logo=data:image/png;base64,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" alt=""/></a><a class="github-badge" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=13060602001624" style="margin-inline:5px" data-title="冀公网安备 13060602001624号" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/%E5%86%80%E5%85%AC%E7%BD%91%E5%AE%89%E5%A4%87-13060602001624%E5%8F%B7-e1d492?style=flat&amp;logo=data:image/png;base64,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" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;tutorial/Codeforces/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/img-background/30.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-11</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;tutorial/Codeforces/&quot;);" href="javascript:void(0);" alt="">Codeforces</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;tutorial/Codeforces/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;algorithm/xwysyy Algorithm/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/img-background/6.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-02</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;algorithm/xwysyy Algorithm/&quot;);" href="javascript:void(0);" alt="">xwysyy Algorithm</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;algorithm/xwysyy Algorithm/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;syntax/LaTeX/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/img-background/28.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-01</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;syntax/LaTeX/&quot;);" href="javascript:void(0);" alt="">LaTeX</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;syntax/LaTeX/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax src="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gitcalendar.xwysyy.cn/api?xwysyy",['#ebedf0', '#f0fff4', '#dcffe4', '#bef5cb', '#85e89d', '#34d058', '#28a745', '#22863a', '#176f2c', '#165c26', '#144620'],'xwysyy')
+    }
+  </script><!-- hexo injector body_end end --></body></html>

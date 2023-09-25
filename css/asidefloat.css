@@ -1,0 +1,306 @@
+.contact-info {
+    position: fixed;
+    top: 22%;
+    z-index: 200;
+    left: -51px;
+    transition: 0.4s;
+}
+
+.contact-info:hover {
+    left: 0px;
+}
+
+.contact-info .option {
+    cursor: pointer;
+    position: relative;
+}
+
+.contact-info .option i {
+    display: block;
+    width: 50px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    background: rgb(255, 255, 255);
+    color: #b9b9b9;
+    font-size: 20px;
+    transition: 0.4s;
+    border-radius: 0 10px 10px 0;
+}
+
+.contact-info .option:hover i {
+    color: #3498db;
+}
+
+.contact-info .text {
+    border-radius: 15px;
+    position: absolute;
+    height: 68px;
+    width: 200px;
+    background: rgba(255, 255, 255, .85);
+    top: 0;
+    z-index: -1;
+    left: -136px;
+    color: rgb(0, 0, 0);
+    line-height: 60px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+
+
+.contact-info .option:hover .text {
+    left: 60px;
+}
+
+.contact-info .blok {
+    position: absolute;
+    height: 60px;
+    width: 100px;
+    top: 0;
+    z-index: -1;
+    left: 0px;
+}
+
+.contact-info .bloktop {
+    position: absolute;
+    height: 75px;
+    width: 100px;
+    bottom: 0px;
+    z-index: -1;
+    left: 0px;
+}
+
+.contact-info .blokbottom {
+    position: absolute;
+    height: 75px;
+    width: 100px;
+    top: 0;
+    z-index: -1;
+    left: 0px;
+}
+
+.contact-info .option:hover .blok, .contact-info .option:hover .bloktop, .contact-info .option:hover .blokbottom {
+    left: 0px;
+}
+
+
+
+[data-theme=dark]
+.contact-info .option i {
+    background: rgb(22, 22, 22);
+    color: #b9b9b9;
+}
+
+[data-theme=dark]
+.contact-info .text {
+    background: rgba(23, 23, 23, 0.85);
+    color: rgba(255, 255, 255, 0.92);
+}
+
+@media screen and (max-width: 1300px) {
+    .contact-info {
+        display: none !important;
+    }
+}
+
+.aplayer {
+    opacity: .93 !important;
+}
+
+[data-theme=dark]
+.aplayer {
+    background: rgb(22, 22, 22) !important;
+    color: rgb(255, 255, 255);
+}
+
+[data-theme=dark]
+.aplayer.aplayer-fixed .aplayer-body {
+    background: rgb(22, 22, 22) !important;
+    color: rgb(255, 255, 255);
+}
+
+[data-theme=dark]
+.aplayer .aplayer-list ol li:hover {
+    background: #3b3b3b;
+}
+
+[data-theme=dark]
+.aplayer .aplayer-list ol li.aplayer-list-light {
+    background: #686868;
+}
+
+[data-theme=dark]
+.aplayer .aplayer-info .aplayer-controller .aplayer-time {
+    color: #d4d4d4;
+}
+
+[data-theme=dark]
+.aplayer .aplayer-list ol li .aplayer-list-index {
+    color: #d4d4d4;
+}
+
+[data-theme=dark]
+.aplayer .aplayer-list ol li .aplayer-list-author {
+    color: #d4d4d4;
+}
+
+[data-theme=dark]
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+    fill: #d4d4d4;
+}
+
+.contact-info .text .strip {
+    border-radius: 5px;
+    position: absolute;
+    height: 36px;
+    width: 5px;
+    background: rgba(20, 163, 230, 0.8);
+    top: 12px;
+    z-index: -1;
+    right: 4px;
+    transition: 0.4s;
+}
+
+.contact-info .aplayertext .strip {
+    transition: none !important;
+}
+
+.contact-info .option:hover .aplayertext .strip {
+    background: transparent;
+}
+
+[data-theme=dark]
+.contact-info .aplayer .aplayer-miniswitcher {
+    background: rgba(23, 23, 23, 0.85);
+}
+
+.contact-info .aplayer .aplayer-miniswitcher .aplayer-icon path {
+    fill: #3498db;
+}
+
+[data-theme=dark]
+.contact-info .option:hover i {
+    color: #3498db;
+}
+
+.contact-info .option .text .post-reward .tip-button__text {
+    margin: 25px !important;
+}
+
+.contact-info .option .text .post-reward .reward-main .reward-all {
+    border-radius: 12px !important;
+}
+
+.contact-info .option .text .post-reward .reward-button .reward-main .reward-all {
+    z-index: 999 !important;
+}
+
+[data-theme="dark"]
+.contact-info .option .text .post-reward .tip-button {
+    border: solid 2px rgba(236, 233, 233, 0.8);
+    background: #043749d0;
+}
+
+
+/* 基于chuckle的微调，可能与你的博客不适配，根据注释微调 */
+/* 第一个按钮的滚动通知 */
+/* 通知栏大小 文字行高调整 */
+.contact-info .option:first-child:hover .text {
+    height: 200px;
+    width: 300px;
+    line-height: 20px;
+    overflow: hidden;
+}
+/* 小图标调整 */
+.contact-info .option:first-child:hover .text .strip {
+    top: 33px;
+}
+
+.contact-info .option .text .aside_notice{
+    word-wrap:break-word;
+    padding:20px;
+    /*color: transparent; !*偷个懒不做位移直接透明*!*/
+    display: none;
+}
+
+/* 文字滚动动画 */
+.contact-info .option:first-child:hover .text .aside_notice{
+    color: #0A84FF;
+    display: block;
+    animation: notice 13s linear 0s infinite normal forwards;
+}
+/* 鼠标悬停时停止滚动 */
+.contact-info .option .text .aside_notice:hover {
+    animation-play-state: paused!important;
+    cursor: pointer;
+}
+/* 文字滚动动画 */
+@keyframes notice {
+    0% {
+        transform: translateY(90px);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* 打赏按钮大小与布局 */
+.contact-info .option .text .post-reward .reward-button {
+    display: inline-flex;
+    width: 90%;
+    position: relative;
+    left: -9.7px;
+    border-radius: 15px;
+}
+
+.contact-info .option .text .post-reward {
+    margin-top: 0px;
+}
+
+/* 二维码横向排列 */
+.contact-info .option .text .post-reward .reward-main .reward-all {
+    display: inline-flex;
+}
+
+/* 二维码靠边对齐 */
+.contact-info .option .text .post-reward .reward-main {
+    left: -10px;
+    line-height: 30px;
+}
+
+/* 倒三角位置 */
+.contact-info .option .text .post-reward .reward-main .reward-all:after {
+    left: 110px;
+}
+
+/* 充电矢量图动画 */
+.contact-info .option .text .post-reward .reward-button i {
+    background: yellow;
+    border-radius: 10px;
+    animation: Breath 1.2s linear 1s infinite;
+    color: var(--btn-bg) !important;
+    position: relative;
+    left: 46px;
+}
+
+@keyframes Breath {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+
+/* 打赏按钮hover动画 */
+.contact-info .option .text .post-reward:hover .reward-button {
+    background: linear-gradient(to left, yellow 50%, var(--btn-bg) 50%);
+    background-size: 200%;
+    background-position-x: -100%;
+    transition: .5s ease-out;
+}

@@ -1,0 +1,1 @@
+function refreshCache(){location.reload(!0)}
