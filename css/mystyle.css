@@ -7,14 +7,16 @@
   }
   
   div#poem_sentence{
-    text-align: center;
-    font-family: serif,cursive;
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
-    padding: 1rem;
-    border-radius: 12px;
-    background: var(--heo-secondbg);
-    min-height: 62px;
+    div#poem_sentence {
+      text-align: center;
+      font-family: "kaiti";
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+      padding: 1rem;
+      border-radius: 12px;
+      background: var(--heo-secondbg);
+      min-height: 62px;
+      font-size: 22px;
   }
   
   div#poem_info{
